@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 0 auto;
+            width: 20px;
+            
+        }
+
+        th, td{
+            padding: 5px;
+            text-align: left; 
+            text-align: center;
+        }
+
+        table th{
+         background-color: #d2ffe1; 
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        h4{
+            margin: 0 auto;
+        }
+    </style>
+    <title >CRUD</title>
+</head>
+<body>
+<div >
+    <h2  class="panel panel-default">CLIENTES</h2>
+    <h4 class="form-group col-md-6"><a href = "agregar.php"> AGREGAR CLIENTE</a></h4>
+    <table class="table table-bordered">
+        <thead> 
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Cedula</th>
+                <th>Correo</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+        <?php 
+        
+        //VARIABLE RESULT OBJETO QUE TRAE LOS DATOS DE LA CONSULTA y se transfroma en una matriz asociativa
+        if($result ->num_rows > 0){
+            while($row = $result ->fetch_assoc()){
+                echo '<tr>';
+                echo '<td>'. $row ['idusuario'] . '</td>';
+                echo '<td>'. $row ['nombreusuario'] . " " .$row ['apellidousuario'] .'</td>';
+                echo '<td>'. $row ['cedulausuario'] . '</td>';
+                echo '<td>'. $row ['correousuario'] . '</td>';
+                echo'<td>';
+                echo '<a class="btn btn-success" href="leer.php?id='.$row['idusuario'].'">Leer </a>&nbsp;'; 
+                echo '<a class="btn btn-warning" href="actualizar.php?id='.$row['idusuario'].'">Actualizar </a>&nbsp;';
+                echo '<a class="btn btn-danger" onclick="alerta()"  href="eliminar.php?id='.$row['idusuario'].'">Eliminar</a>&nbsp;';
+
+                
+                echo '</td>';
+                echo'</tr>';
+            }
+        }else{
+            echo '<p><em>NO EXISTEN DATOS REGISTRADOS</em></p>';
+        }
+        ?>
+        </tbody>
+    </table>
+</div>    
+<script type="text/javascript">
+    function alerta(){
+        var x = confirm ('Esta seguro de que desea eliminar este usuario?');
+        if(x){
+            return true;
+
+        }else{
+            return false;
+            header("location: index.php");
+        }
+    }
+
+</script>
+</body>
+</html>

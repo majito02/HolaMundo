@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Cliente</title>
+</head>
+<body>
+    <div>
+        <h1>Datos del Cliente</h1>
+    </div>
+    <div>
+        <label>Nombre</label>
+        <p><?php echo $nombre. " ". $apellido; ?></p>
+    </div>
+    <div>
+        <label>Cedula</label>
+        <p><?php echo $cedula; ?></p>
+    </div>
+    <div>
+        <label>Telefono</label>
+        <p><?php echo $telefono; ?></p>
+    </div>
+    <div>
+        <label>Direccion</label>
+        <p><?php echo $direccion; ?></p>
+    </div>
+    <div>
+        <label>Correo</label>
+        <p><?php echo $correo; ?></p>
+    </div>
+
+    <div>
+        <label>Foto</label>
+        <p> <img src="data:image/jpg;base64,<?php echo base64_encode($foto);?>" width=180px"></p>
+    </div>
+               
+          
+    <p><a href="index.php">Atrás</a></p>
+</body>
+</html>

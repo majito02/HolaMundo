@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>ACTUALIZAR USUARIOS</title>
+    
+</head>
+<body>
+    <div class="table table-striped">
+        <h2>ACTUALIZAR LOS DATOS DEL CLIENTE</h2>
+        <p>Edite este formulario para actualizar los datos del cliente en la base de datos</p>
+        <form action="<?php echo $_SERVER['PHP_SELF']?>" method ="post">
+     <div>
+         <label>Nombre:</label>
+         <input type="text" name ="nombreusu" value="<?php echo $nombre?>"  required>
+     </div>
+    <br>
+     <div>
+         <label>Apellido:</label>
+         <input type="text" name ="apellidousu" value="<?php echo $apellido?>"  required>
+     </div>
+     <br>
+     <div>
+         <label>Cedula:</label>
+         <input type="text" name ="cedulausu" value="<?php echo $cedula?>" required>
+     </div>
+     <br>
+     <div>
+         <label>Teléfono:</label>
+         <input type="text" name ="telefonousu" value="<?php echo $telefono?>" required>
+     </div>
+     <br>
+     <div>
+         <label>Dirección:</label>
+         <input type="text" name ="direccionusu" value="<?php echo $direccion?>" required>
+     </div>
+     <br>
+     <div>
+         <label>Correo:</label>
+         <input type="text" name ="correousu" value="<?php echo $correo?>"  required>
+     </div>
+     <br>
+    <input type="submit" value="ACTUALIZAR">
+    <br><br>
+     <a href ="index.php"> CANCELAR </a>
+
+    </form>
+   
+</div>
+</body>
+</html>

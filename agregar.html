@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGREGAR USUAIO</title>
+</head>
+<body>
+    <div> 
+        <h2>Agregar un nuevo cliente</h2>
+        <p>Llene este formulario para agregar un nuevo cliente en la base de datos</p>
+    <form action="<?php echo $_SERVER['PHP_SELF']?>" method ="post">
+     <div>
+         <label>Nombre:</label>
+         <input type="text" name ="nombreusu" required>
+     </div>
+    <br>
+     <div>
+         <label>Apellido:</label>
+         <input type="text" name ="apellidousu" required>
+     </div>
+     <br>
+     <div>
+         <label>Cedula:</label>
+         <input type="text" name ="cedulausu" required>
+     </div>
+     <br>
+     <div>
+         <label>Teléfono:</label>
+         <input type="text" name ="telefonousu" required>
+     </div>
+     <br>
+     <div>
+         <label>Dirección:</label>
+         <input type="text" name ="direccionusu" required>
+     </div>
+     <br>
+     <div>
+         <label>Correo:</label>
+         <input type="text" name ="correousu" required>
+     </div>
+     <br>
+     <div>
+         <label >Selecciona una imagen</label>
+         <input type="file" name="foto_usuario">
+     </div>
+     <br>
+    <input type="submit" value="AGREGAR">
+    <br><br>
+     <a href ="index.php"> CANCELAR </a>
+
+    </form>
+   
+    </div>
+</body>
+</html>
